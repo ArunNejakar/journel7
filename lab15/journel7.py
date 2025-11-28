@@ -10,12 +10,17 @@ else:
     print("No command-line input provided. Using default values:")
     scores = ["10", "20", "30", "40"]  # Default values
 
-# Convert using eval() for calculations
-total = sum(eval(x) for x in scores)
+# Convert strings to integers
+scores = [int(x) for x in scores]
+
+# Perform calculations
+total = sum(scores)
 average = total / len(scores)
-maximum = max(scores, key=eval)
-minimum = min(scores, key=eval)
+maximum = max(scores)
+minimum = min(scores)
+
+# Print results
 print("Sum of scores =", total)
 print("Average of scores =", average)
-print("Maximum score =", eval(maximum))
-print("Minimum score =", eval(minimum))
+print("Maximum score =", maximum)
+print("Minimum score =", minimum)
